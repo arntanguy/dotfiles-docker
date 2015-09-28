@@ -1,0 +1,25 @@
+- clean: ['~', '~/.vim']
+
+- shell:
+  - [git submodule update --init --remote --recursive, Installing submodules]
+
+- link:
+    # Term
+    #~/.tmux.conf: term/tmux.conf
+    # GUI
+    ~/.xmonad: gui/xmonad
+    ~/.xmobarrc: gui/xmobarrc
+    # Editor
+    ~/.nvimrc.plugins: editor/vim/vimrc.plugins
+    ~/.nvimrc: editor/vim/.vimrc
+    ~/.nvim: editor/vim
+
+- shell:
+  # Install vim plugins
+  - command: nvim -Nu ~/.nvimrc.plugins +PlugUpdate +qall &> /dev/null
+    stdin: true
+    stdout: true
+    stderr: true
+
+
+

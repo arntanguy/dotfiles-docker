@@ -12,11 +12,10 @@ source /etc/bash.bashrc
 if [ "$TERM" != "dumb" ]; then
   eval "`dircolors ~/.mydircolors`"
   alias ls='ls --color=auto'
-  #alias dir='ls --color=auto --format=vertical'
-  #alias vdir='ls --color=auto --format=long'
 fi
 
 export EDITOR='nvim'
+export LANG=en_US.utf8
 set shell=/bin/bash
 
 shopt -s histappend
@@ -26,23 +25,8 @@ PROMPT_COMMAND='history -a'
 export PATH="$PATH:/home/arnaud/programmation/scripts:/usr/lib/qt/bin:/usr/local/bin/zotero:/usr/local/MATLAB/R2012a/bin:/home/arnaud/.i3:/usr/local/cuda-6.5/bin"
 export TERMINAL=/usr/bin/urxvt
 export LD_LIBRARY_PATH="/usr/lib:/usr/local/lib:/opt/intel/mkl/lib/intel64:/usr/lib/x86_64-linux-gnu:/home/arnaud/PhD/Code/lsd_slam/lsd_slam_core/lib"
-export POLYTECH="/mnt/NTFS/VirtualBox VMs/partage/polytech"
-export PYTHONPATH="$PYTHONPATH"
-
-export MATLABPATH=$MATLABPATH:/home/arnaud/PhD/Code/Matlab
-
-
-alias emacs="XMODIFIERS= emacs"
-function e() 
-{ 
-  (emacsclient --alternate-editor="" -c "$@" &> /dev/null &)
-}
-
-alias sshwork='ssh -t tanguy@tum "screen -dR"'
-alias sshtitan='ssh -t tanguy@tum_titan "screen -dR"'
 
 alias ls='ls --color=auto'
-alias mntfs="sudo mount LABEL=DATA_NTFS /mnt/NTFS"
 alias musb="sudo mount /dev/sdb1 /mnt/USB"
 
 alias android-connect="sudo mtpfs -o allow_other /mnt/ANDROID"
@@ -53,57 +37,20 @@ alias mm="make clean && m"
 alias cmake-clean="make clean ; rm -rf CMakeCache.txt CMakeFiles"
 alias cc="cmake-clean && cmake .."
 alias ccm="cc && mm"
-# For YouCompleteMe
-alias cmake="cmake -D CMAKE_EXPORT_COMPILE_COMMANDS=\"YES\""
-
-alias cpwd="pwd > /tmp/current_dir"
-alias mpwd="source goto_current_dir" 
-function ccd
-{
-  # Use autojump
-  cd "$1"; cpwd
-}
-function jcd
-{
-  # Use autojump
-  j -a "$1"; cd "$1"; cpwd
-}
-function jccd
-{
-  # Use autojump
-  v=$(echo "$1" | tr -d ' ')
-  jc -a $v ; cd "${v%%/}"; cpwd
-}
 
 function glog
 {
   GLOG_logtostderr=1 $*
 }
 
-alias nv="export PROMPT='(nv) $PROMPT'"
 alias http="python -m http.server"
 
-alias pr="primusrun"
 alias x="startx"
-
-alias m="make -j8"
-
-export OCULUS_ROOT="/home/arnaud/programmation/PFE/private/OculusSDK"
-export CMAKEMODULES="/home/arnaud/programmation/CMakeModules"
 
 alias en="setxkbmap us && /usr/bin/xbindkeys"
 alias fr="setxkbmap fr && /usr/bin/xbindkeys"
 
-alias nvidia-off="sudo modprobe -r nvidia_uvm && sudo modprobe -r nvidia && sudo tee /proc/acpi/bbswitch <<< OFF"
-
 alias yaourtf="yaourt --noconfirm"
-## Cuda-run
-function cr
-{ 
-  echo "Running CUDA Application $*"
-  optirun $*
-  nvidia-off
-}
 
 ## Automatic cd
 shopt -s autocd
@@ -111,8 +58,6 @@ shopt -s autocd
 ## Improve bash completion
 bind "TAB:menu-complete"
 bind "set show-all-if-ambiguous on"
-
-
 
 command fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
 
@@ -123,20 +68,9 @@ source /usr/share/autojump/autojump.sh
 source /opt/ros/indigo/setup.bash
 source ~/catkin_ws/devel/setup.bash
 alias cws="source ~/src/catkin_ws/devel/setup.bash"
-export ROS_MASTER_URI=http://localhost:11311
 export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud"
 
-export ARDUINO_SDK="/usr/share/arduino"
-
-export BOOST_ROOT="/usr/include"
-export BOOST_INCLUDEDIR="/usr/include"
-export BOOST_LIBRARIES="/usr/lib/x86_64-linux-gnu"
 unset ROS_HOSTNAME
-
-# HRP2
-#export ROS_IP=10.16.3.13
-export LANG=en_US.utf8
-
 export IP=$(ifconfig eth0 | grep "inet addr" | sed 's/.*inet addr:\(.*\)  Bcast.*/\1/g')
 
 # MASTER
@@ -167,7 +101,7 @@ alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
 export GIT_SSL_NO_VERIFY=1
 
 ## Powerline status bar
-# function _update_ps1() {
-#   export PS1="$(~/.dotfiles/powerline-shell/powerline-shell.py $? 2> /dev/null)"
-# }
-# export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+function _update_ps1() {
+  export PS1="$(~/.powerline-shell.py $? 2> /dev/null)"
+}
+export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"

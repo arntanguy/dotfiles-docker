@@ -2,6 +2,7 @@
 
 - shell:
   - [git submodule update --init --remote --recursive, Installing submodules]
+  - command: cd term/powerline-shell && ./install.py
 
 - link:
     # Dev
@@ -11,6 +12,7 @@
     ~/.tmux.conf: term/tmux.conf
     ~/.bashrc: term/bash/bashrc
     ~/.mydircolors: term/mydircolors
+    ~/.powerline-shell.py: term/powerline-shell/powerline-shell.py
     # GUI
     ~/.xmonad: gui/xmonad
     ~/.xmobarrc: gui/xmobarrc
@@ -27,6 +29,7 @@
     stdin: true
     stdout: true
     stderr: true
+
 
 
 

@@ -4,3 +4,6 @@
 [submodule "editor/vim"]
 	path = editor/vim
 	url = git@github.com:arntanguy/.vim.git
+[submodule "term/powerline-shell"]
+	path = term/powerline-shell
+	url = git@github.com:milkbikis/powerline-shell.git

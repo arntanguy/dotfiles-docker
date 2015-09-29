@@ -1,0 +1,5 @@
+[user]
+	email = arn.tanguy@gmail.com
+	name = Arnaud TANGUY
+[push]
+	default = simple

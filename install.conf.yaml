@@ -4,11 +4,18 @@
   - [git submodule update --init --remote --recursive, Installing submodules]
 
 - link:
+    # Dev
+    ~/.gitconfig: dev/gitconfig
+    ~/.ycm_extra_conf.py: dev/ycm_extra_conf.py
     # Term
-    #~/.tmux.conf: term/tmux.conf
+    ~/.tmux.conf: term/tmux.conf
+    ~/.bashrc: term/bash/bashrc
+    ~/.mydircolors: term/mydircolors
     # GUI
     ~/.xmonad: gui/xmonad
     ~/.xmobarrc: gui/xmobarrc
+    ~/.xbindkeys: gui/xbindkeys
+    ~/.xinitrc: gui/xinitrc
     # Editor
     ~/.nvimrc.plugins: editor/vim/vimrc.plugins
     ~/.nvimrc: editor/vim/.vimrc

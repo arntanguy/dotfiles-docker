@@ -18,6 +18,7 @@
     ~/.xmobarrc: gui/xmobarrc
     ~/.xbindkeys: gui/xbindkeys
     ~/.xinitrc: gui/xinitrc
+    ~/.config/redshift.conf: gui/redshift.conf
     # Editor
     ~/.nvimrc.plugins: editor/vim/vimrc.plugins
     ~/.nvimrc: editor/vim/.vimrc

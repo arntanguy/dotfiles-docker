@@ -24,7 +24,7 @@ PROMPT_COMMAND='history -a'
 
 export PATH="$PATH:/home/arnaud/programmation/scripts:/usr/lib/qt/bin:/usr/local/bin/zotero:/usr/local/MATLAB/R2012a/bin:/home/arnaud/.i3:/usr/local/cuda-6.5/bin"
 export TERMINAL=/usr/bin/urxvt
-export LD_LIBRARY_PATH="/usr/lib:/usr/local/lib:/opt/intel/mkl/lib/intel64:/usr/lib/x86_64-linux-gnu:/home/arnaud/PhD/Code/lsd_slam/lsd_slam_core/lib"
+export LD_LIBRARY_PATH="/usr/lib:/usr/local/lib:/opt/intel/mkl/lib/intel64:/usr/lib/x86_64-linux-gnu:/home/arnaud/PhD/Code/lsd_slam/lsd_slam_core/lib:/usr/local/lib/roboptim-core:/usr/local/lib64"
 
 alias ls='ls --color=auto'
 alias musb="sudo mount /dev/sdb1 /mnt/USB"

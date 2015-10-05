@@ -15,17 +15,22 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops -- fullScreenEventHook
 import XMonad.Layout.NoBorders
 
+-- For matlab
+import XMonad.Hooks.SetWMName
+
 import XMonad.Actions.DynamicWorkspaces
 import XMonad.Actions.CopyWindow(copy)
 import XMonad.Prompt
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+
 main = do
   xmproc <- spawnPipe myStatusBar -- Status bar
   xmonad $ defaultConfig
    { 
      handleEventHook    = fullscreenEventHook, -- Fix fullscreen behavior
+     startupHook = myStartupHook,
      manageHook = manageDocks <+> manageHook defaultConfig,
      layoutHook = lessBorders OnlyFloat $ avoidStruts  $  layoutHook defaultConfig,
      logHook = dynamicLogWithPP xmobarPP
@@ -42,6 +47,11 @@ main = do
    where
      cModMask = mod4Mask -- Rebind MOD to the Windows key
      myStatusBar = "~/.cabal/bin/xmobar"
+     -- For Matlab
+     myStartupHook = do
+      spawn "herp" 
+      spawn "derp"
+      setWMName "LG3D"
 
      -- Keys to unmap
      delKeys :: XConfig l -> [(KeyMask, KeySym)]
@@ -63,6 +73,7 @@ main = do
          , ((cModMask,                   xK_Up  ), spawn "amixer set Master 1+")
 
          -- Dynamic workspace
+         -- Delete Workspace
          , ((modm .|. shiftMask, xK_BackSpace), removeWorkspace)
          , ((modm .|. shiftMask, xK_v      ), selectWorkspace defaultXPConfig)
          -- Move window to named worskpace        

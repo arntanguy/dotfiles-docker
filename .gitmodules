@@ -7,3 +7,6 @@
 [submodule "term/powerline-shell"]
 	path = term/powerline-shell
 	url = git@github.com:milkbikis/powerline-shell.git
+[submodule "gui/i3"]
+	path = gui/i3
+	url = git@github.com:arntanguy/i3config.git

@@ -15,6 +15,7 @@
     ~/.powerline-shell.py: term/powerline-shell/powerline-shell.py
     # GUI
     ~/.xmonad: gui/xmonad
+    ~/.i3: gui/i3
     ~/.xmobarrc: gui/xmobarrc
     ~/.xbindkeys: gui/xbindkeys
     ~/.xinitrc: gui/xinitrc

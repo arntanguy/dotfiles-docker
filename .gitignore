@@ -2,5 +2,6 @@ gui/xmonad/xmonad.errors
 gui/xmonad/xmonad.hi
 gui/xmonad/xmonad.o
 gui/xmonad/xmonad-x86_64-linux
+gui/xmonad/history
 *.swp
 *.swo

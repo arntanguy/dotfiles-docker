@@ -11,6 +11,9 @@
     # Term
     ~/.tmux.conf: term/tmux.conf
     ~/.bashrc: term/bash/bashrc
+    ~/.zshrc: term/zshrc
+    ~/.term_common: term/term_common
+    ~/.oh-my-zsh: term/oh-my-zsh
     ~/.mydircolors: term/mydircolors
     ~/.powerline-shell.py: term/powerline-shell/powerline-shell.py
     # GUI
@@ -31,7 +34,4 @@
     stdin: true
     stdout: true
     stderr: true
-
-
-
 

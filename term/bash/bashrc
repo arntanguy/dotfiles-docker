@@ -21,35 +21,15 @@ set shell=/bin/bash
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 
+source ~/.term_common
 
 export PATH="$PATH:/home/arnaud/programmation/scripts:/usr/lib/qt/bin:/usr/local/bin/zotero:/usr/local/MATLAB/R2012a/bin:/home/arnaud/.i3:/usr/local/cuda-6.5/bin"
 export TERMINAL=/usr/bin/urxvt
 export LD_LIBRARY_PATH="/usr/lib:/usr/local/lib:/opt/intel/mkl/lib/intel64:/usr/lib/x86_64-linux-gnu:/home/arnaud/PhD/Code/lsd_slam/lsd_slam_core/lib:/usr/local/lib/roboptim-core:/usr/local/lib64"
 
-alias ls='ls --color=auto'
-alias musb="sudo mount /dev/sdb1 /mnt/USB"
-
 alias android-connect="sudo mtpfs -o allow_other /mnt/ANDROID"
 alias android-disconnect="fusermount -u /mnt/ANDROID"
-
-alias m="make -j12"
-alias mm="make clean && m"
-alias cmake-clean="make clean ; rm -rf CMakeCache.txt CMakeFiles"
-alias cc="cmake-clean && cmake .."
-alias ccm="cc && mm"
-
-function glog
-{
-  GLOG_logtostderr=1 $*
-}
-
 alias http="python -m http.server"
-
-alias x="startx"
-
-alias en="setxkbmap us && /usr/bin/xbindkeys"
-alias fr="setxkbmap fr && /usr/bin/xbindkeys"
-
 alias yaourtf="yaourt --noconfirm"
 
 ## Automatic cd
@@ -64,41 +44,12 @@ command fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -
 ## Load autojump
 source /usr/share/autojump/autojump.sh
 
-###### ROS #####
+# ROS
 source /opt/ros/indigo/setup.bash
 source ~/catkin_ws/devel/setup.bash
 alias cws="source ~/src/catkin_ws/devel/setup.bash"
-export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud"
+# export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud"
 
-unset ROS_HOSTNAME
-export IP=$(ifconfig eth0 | grep "inet addr" | sed 's/.*inet addr:\(.*\)  Bcast.*/\1/g')
-
-# MASTER
-# export ROS_IP=$IP
-# export ROS_MASTER_URI="http://$ROS_IP:11311"
-
-# MY laptop in jrl
-# export ROS_IP=$IP
-# export ROS_MASTER_URI="http://150.29.145.208:11311"
-
-# LOCALHOST
-export ROS_IP="127.0.0.1"
-export ROS_MASTER_URI="http://127.0.0.1:11311"
-
-# HRP2001V
-# export ROS_IP=$IP
-# export ROS_MASTER_URI="http://hrp2001v:11311"
-
-#export ROS_IP=10.16.3.13
-alias ros_local="export ROS_MASTER_URI=\"http://127.0.0.1:11311\" && export ROS_IP=\"127.0.0.1\""
-alias ros_hrp="export PROMPT='(hrp) $PROMPT' && export ROS_MASTER_URI=\"http://10.16.3.13:11311\""
-alias ros_server="export PROMPT='(local) $PROMPT' && export ROS_MASTER_URI=\"http://$ROS_IP:11311\""
-alias ros_herve="export ROS_MASTER_URI=\"http://150.29.145.226:11311\""
-
-alias cclang="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
-alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
-
-export GIT_SSL_NO_VERIFY=1
 
 ## Powerline status bar
 function _update_ps1() {

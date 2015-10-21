@@ -5,3 +5,4 @@ gui/xmonad/xmonad-x86_64-linux
 gui/xmonad/history
 *.swp
 *.swo
+.gitconfig

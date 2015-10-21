@@ -1,0 +1,52 @@
+# This file contains the common configuration options
+# to be included from your terminal configuration ~/.bashrc, ~/.zshrc...
+
+# GUI
+alias x="startx"
+
+# C++
+alias m="make -j12"
+alias mm="make clean && m"
+alias cmake-clean="make clean ; rm -rf CMakeCache.txt CMakeFiles"
+alias cc="cmake-clean && cmake .."
+alias ccm="cc && mm"
+alias cclang="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
+alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
+function glog
+{
+  GLOG_logtostderr=1 $*
+}
+
+unset ROS_HOSTNAME
+export IP=$(ifconfig eth0 | grep "inet addr" | sed 's/.*inet addr:\(.*\)  Bcast.*/\1/g')
+
+# MASTER
+# export ROS_IP=$IP
+# export ROS_MASTER_URI="http://$ROS_IP:11311"
+
+# MY laptop in jrl
+# export ROS_IP=$IP
+# export ROS_MASTER_URI="http://150.29.145.208:11311"
+
+# LOCALHOST
+export ROS_IP="127.0.0.1"
+export ROS_MASTER_URI="http://127.0.0.1:11311"
+
+# HRP2001V
+# export ROS_IP=$IP
+# export ROS_MASTER_URI="http://hrp2001v:11311"
+
+alias ros_local="export ROS_MASTER_URI=\"http://127.0.0.1:11311\" && export ROS_IP=\"127.0.0.1\""
+alias ros_hrp="export PROMPT='(hrp) $PROMPT' && export ROS_MASTER_URI=\"http://10.16.3.13:11311\""
+alias ros_server="export PROMPT='(local) $PROMPT' && export ROS_MASTER_URI=\"http://$ROS_IP:11311\""
+alias ros_herve="export ROS_MASTER_URI=\"http://150.29.145.226:11311\""
+
+
+# Keyboard layout
+alias en="setxkbmap us && /usr/bin/xbindkeys"
+alias fr="setxkbmap fr && /usr/bin/xbindkeys"
+
+# Filesystem
+alias musb="sudo mount /dev/sdb1 /mnt/USB"
+
+export GIT_SSL_NO_VERIFY=1

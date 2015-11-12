@@ -3,6 +3,7 @@ gui/xmonad/xmonad.hi
 gui/xmonad/xmonad.o
 gui/xmonad/xmonad-x86_64-linux
 gui/xmonad/history
+term/tmux/plugins
 *.swp
 *.swo
 .gitconfig

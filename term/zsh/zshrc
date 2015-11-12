@@ -1,0 +1,44 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s ~/.zprezto/init.zsh ]]; then
+  source ~/.zprezto/init.zsh
+else
+  echo "Error sourcing zpresto!"
+fi
+
+# Customize to your needs...
+export KEYTIMEOUT=0.01
+
+# User configuration
+# ROS
+source /opt/ros/indigo/setup.zsh
+source ~/catkin_ws/devel/setup.zsh
+
+# common configuration
+source ~/.term_common
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+  alias vim='nvim'
+fi
+
+alias cws="source ~/src/catkin_ws/devel/setup.zsh"
+
+# bindkey "^R" history-incremental-search-backward
+# bindkey -M viins \C-R history-incremental-search-backward
+# bindkey -M vicmd \C-R history-incremental-search-backward

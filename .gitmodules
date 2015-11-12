@@ -10,6 +10,6 @@
 [submodule "gui/i3"]
 	path = gui/i3
 	url = git@github.com:arntanguy/i3config.git
-[submodule "term/oh-my-zsh"]
-	path = term/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "term/prezto"]
+	path = term/zsh/prezto
+	url = https://github.com/sorin-ionescu/prezto.git

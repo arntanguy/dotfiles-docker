@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export KEYTIMEOUT=0.01
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -51,7 +52,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump colored-man-pages colorize extract vi-mode)
+plugins=(git autojump colored-man-pages colorize extract vi-mode history-substring-search)
 
 # User configuration
 # ROS
@@ -95,3 +96,6 @@ fi
 
 alias cws="source ~/src/catkin_ws/devel/setup.zsh"
 
+# bindkey "^R" history-incremental-search-backward
+bindkey -M viins \C-R history-incremental-search-backward
+bindkey -M vicmd \C-R history-incremental-search-backward

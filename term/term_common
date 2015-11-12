@@ -4,6 +4,8 @@
 # GUI
 alias x="startx"
 
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+
 # C++
 alias m="make -j12"
 alias mm="make clean && m"
@@ -19,6 +21,7 @@ function glog
 
 unset ROS_HOSTNAME
 export IP=$(ifconfig eth0 | grep "inet addr" | sed 's/.*inet addr:\(.*\)  Bcast.*/\1/g')
+export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud/src/hrp2_drc"
 
 # MASTER
 # export ROS_IP=$IP

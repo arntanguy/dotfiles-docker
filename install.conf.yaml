@@ -8,6 +8,7 @@
     # Dev
     ~/.gitconfig: dev/gitconfig
     ~/.ycm_extra_conf.py: dev/ycm_extra_conf.py
+    ~/.clang-format: dev/clang-format
     # Term
     ~/.tmux.conf: term/tmux.conf
     ~/.tmux: term/tmux/

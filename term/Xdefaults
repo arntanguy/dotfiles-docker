@@ -1,0 +1,68 @@
+xterm*VT100*geometry: 94x28
+xterm*faceName: Bitstream Vera Sans Mono
+xterm*faceSize: 10
+xterm*background: black
+xterm*foreground: white
+xterm*loginShell: true
+xterm*scrollBar: false
+xterm*rightScrollBar: true
+xterm*title: XTerm
+xterm*iconName: XTerm
+xterm*saveLines: 50000
+xterm*jumpScroll: true
+xterm*alwaysUseMods: true
+xterm*metaSendsEscape: true
+xterm*utf8Title: true
+#remap unreadable colors
+xterm.color4: royalblue
+xterm.color12: lightblue
+
+URxvt*scrollBar: false
+URxvt*geometry: 94x28
+# URxvt*font:xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true
+# URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
+URxvt*font:xft:Inconsolata for Powerline:pixelsize=13:antialias=true
+URxvt.boldFont: xft:Inconsolata for Powerline:bold:size=13:antialias=true
+URxvt*saveLines: 50000
+
+urxvt*depth:32
+urxvt*foreground:#B0B0B0
+urxvt*background:rgba:2000/2000/2000/eeee
+
+URxvt.perl-ext-common: default,matcher, vtwheel
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+
+#remap unreadable colors
+urxvt.color4: royalblue
+urxvt.color12: lightblue
+
+
+
+
+
+scratchpad_urxvt_top*geometry: 94x28
+scratchpad_urxvt_top*font:xft:Inconsolata for Powerline:pixelsize=13:antialias=true
+scratchpad_urxvt_top.boldFont: xft:Inconsolata for Powerline:bold:size=13:antialias=true
+scratchpad_urxvt_top*saveLines: 50000
+
+scratchpad_urxvt_top*depth:32
+scratchpad_urxvt_top*foreground:#B0B0B0
+scratchpad_urxvt_top*background:rgba:2000/2000/2000/AAAA
+
+scratchpad_urxvt_top.perl-ext-common: default,matcher, vtwheel
+scratchpad_urxvt_top.url-launcher: /usr/bin/chromium
+scratchpad_urxvt_top.matcher.button: 1
+
+scratchpad_urxvt_top*scrollTtyOutput:      false
+scratchpad_urxvt_top*scrollWithBuffer:     true
+scratchpad_urxvt_top*scrollTtyKeypress:    true
+
+#remap unreadable colors
+scratchpad_urxvt_top.color4: royalblue
+scratchpad_urxvt_top.color12: lightblue
+

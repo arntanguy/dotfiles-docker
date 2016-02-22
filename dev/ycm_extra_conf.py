@@ -1,4 +1,3 @@
-# This file is NOT licensed under the GPLv3, which is the license for the rest
 # of YouCompleteMe.
 #
 # Here's the license text for this file:
@@ -38,18 +37,16 @@ flags = [
 '-Wall',
 '-Wextra',
 '-Werror',
-'-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
-'-DNDEBUG',
 # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
 # language to use when compiling headers. So it will guess. Badly. So C++
 # headers will be compiled as C headers. You don't want that so ALWAYS specify
 # a "-std=<something>".
 # For a C project, you would set this to something like 'c99' instead of
 # 'c++11'.
-'-std=c++11',
+'-std=c++1y',
 # ...and the same thing goes for the magic -x option which specifies the
 # language that the files to be compiled are written in. This is mostly
 # relevant for c++ headers.
@@ -57,15 +54,13 @@ flags = [
 '-x',
 'c++',
 '-I',
-'.',
-'-isystem',
 '/usr/include',
-'-isystem',
 '/usr/local/include',
-'-I',
-'/opt/ros/indigo/include',
-'-I',
-'/usr/include/eigen3'
+'-I/usr/include/eigen3',
+'-I/usr/include/pcl-1.7',
+'-I/usr/include/pcl-1.7/pcl',
+'-I/usr/include/ni',
+'-I/usr/include/openni2'
 ]
 
 
@@ -79,7 +74,8 @@ flags = [
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder = ''
+#compilation_database_folder = '/home/arnaud/PhD/Code/cpp/icp/build'
+compilation_database_folder = 'build'
 
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
@@ -146,6 +142,12 @@ def GetCompilationInfoForFile( filename ):
 
 def FlagsForFile( filename, **kwargs ):
   if database:
+    #(prefix, sep, suffix) = filename.rpartition('.')
+    #filename = prefix + '.cpp'
+    f = open('/tmp/workfile', 'w')
+    f.write(filename)
+    print filename
+
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
     # python list, but a "list-like" StringVec object
     compilation_info = GetCompilationInfoForFile( filename )

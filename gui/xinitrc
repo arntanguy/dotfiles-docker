@@ -8,8 +8,8 @@ export XMODIFIERS='@im=ibus'
 /usr/bin/start-pulseaudio-x11
 
 ## For nvidia prime
-#xrandr --setprovideroutputsource modesetting NVIDIA-0
-#xrandr --auto
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
 
 #exec /usr/bin/xbindkeys & /usr/bin/dwmstatus & /usr/bin/dwm
 #

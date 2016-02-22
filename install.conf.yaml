@@ -14,6 +14,8 @@
     ~/.tmux: term/tmux/
     ~/.bashrc: term/bash/bashrc
     ~/.term_common: term/term_common
+    ~/.Xdefaults: term/Xdefaults
+    ~/.xbindkeysrc: term/xbindkeysrc
     # ~/.zshrc: term/zshrc
     # ~/.oh-my-zsh: term/oh-my-zsh
     ~/.zprezto: term/zsh/prezto
@@ -29,7 +31,6 @@
     ~/.xmonad: gui/xmonad
     ~/.i3: gui/i3
     ~/.xmobarrc: gui/xmobarrc
-    ~/.xbindkeys: gui/xbindkeys
     ~/.xinitrc: gui/xinitrc
     ~/.config/redshift.conf: gui/redshift.conf
     # Editor

@@ -1,0 +1,15 @@
+# to get a template do
+# xbindkeys -k
+
+# Fn + sound up
+"(/home/arnaud/programmation/scripts/volume up)"
+    m:0x0 + c:123
+# Fn + sound down
+"(/home/arnaud/programmation/scripts/volume down)"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+# Fn + mute
+"(/home/arnaud/programmation/scripts/volume mute)"
+    m:0x0 + c:121
+    XF86AudioMute
+

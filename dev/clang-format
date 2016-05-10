@@ -1,5 +1,5 @@
 ---
 BasedOnStyle: Google
 BreakBeforeBraces: Allman
-ColumnLimit: 120
+ColumnLimit: 0
 ...

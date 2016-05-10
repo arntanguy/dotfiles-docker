@@ -1,7 +1,10 @@
 [user]
 	email = arn.tanguy@gmail.com
 	name = Arnaud TANGUY
+	singinkey = 2781106B
 [push]
 	default = simple
 [core]
 	editor = nvim
+[diff]
+	tool = meld

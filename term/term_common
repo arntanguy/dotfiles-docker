@@ -15,9 +15,22 @@ alias ccm="cc && mm"
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias cclang="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
 alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
+alias matlab="wmname LG3D; matlab"
 function glog
 {
   GLOG_logtostderr=1 $*
+}
+
+function ros_sim
+{
+  rosparam set /use_sim_time true
+  alias rosbagp="rosbag play --clock"
+}
+
+function ros_real
+{
+  rosparam set /use_sim_time false
+  alias rosbagp="rosbag play"
 }
 
 unset ROS_HOSTNAME
@@ -38,7 +51,8 @@ export ROS_MASTER_URI="http://127.0.0.1:11311"
 #
 
 # LIRMM
-# export ROS_IP=192.168.100.92
+#export ROS_IP=192.168.100.92
+# export ROS_IP=10.4.5.42
 # export ROS_MASTER_URI="http://$ROS_IP:11311"
 
 # Roscore on robot (lirmm)
@@ -66,3 +80,8 @@ alias musb="sudo mount /dev/sdb1 /mnt/USB"
 export GIT_SSL_NO_VERIFY=1
 export HRP2_DRC_DESCRIPTION_PATH="~/src/hrp2_drc/hrp2_drc_description"
 export HRP4_DESCRIPTION_PATH="~/catkin_ws/src/hrp4/hrp4_description"
+
+export mc_env_description_PATH="~/catkin_ws/src/mc_ros/mc_env_description"
+export hrp2_drc_description_PATH="~/src/hrp2_drc/hrp2_drc_description"
+export hrp4_description_PATH="~/catkin_ws/src/hrp4/hrp4_description"
+

@@ -30,6 +30,7 @@
     # GUI
     ~/.xmonad: gui/xmonad
     ~/.i3: gui/i3
+    ~/.config/awesome: gui/awesome
     ~/.xmobarrc: gui/xmobarrc
     ~/.xinitrc: gui/xinitrc
     ~/.config/redshift.conf: gui/redshift.conf
@@ -37,10 +38,10 @@
     ~/.config/nvim: editor/vim
     ~/.config/nvim/autoload/plug.vim: editor/vim/vim-plug/plug.vim
 
-- shell:
-  # Install vim plugins
-  - command: nvim -Nu ~/.config/nvim/vimrc.plugins +PlugUpdate +qall &> /dev/null
-    stdin: true
-    stdout: true
-    stderr: true
+#- shell:
+#  # Install vim plugins
+#  - command: nvim -Nu ~/.config/nvim/vimrc.plugins +PlugUpdate +qall &> /dev/null
+#    stdin: true
+#    stdout: true
+#    stderr: true
 

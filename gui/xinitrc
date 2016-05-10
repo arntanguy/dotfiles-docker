@@ -1,15 +1,17 @@
 ## For Japanese
-export GTK_IM_MODULE='ibus'
-export QT_IM_MODULE='ibus'
-ibus-daemon &
-export XMODIFIERS='@im=ibus'
+# export GTK_IM_MODULE='ibus'
+# export QT_IM_MODULE='ibus'
+# ibus-daemon &
+# export XMODIFIERS='@im=ibus'
 
 # For sound
-/usr/bin/start-pulseaudio-x11
+# /usr/bin/start-pulseaudio-x11
 
 ## For nvidia prime
-xrandr --setprovideroutputsource modesetting NVIDIA-0
+# xrandr --setprovideroutputsource modesetting NVIDIA-0
+# xrandr --setprovideroutputsource NVIDIA-0 Intel
 xrandr --auto
+#xrandr --dpi 96
 
 #exec /usr/bin/xbindkeys & /usr/bin/dwmstatus & /usr/bin/dwm
 #
@@ -23,8 +25,7 @@ xrandr --auto
 
 
 ## For I3
-/usr/lib/policykit-1/polkitd --no-debug
-exec /usr/bin/xcompmgr -n & exec /usr/bin/xbindkeys & exec /usr/bin/i3
-
-
+# /usr/lib/policykit-1/polkitd --no-debug
+# exec /usr/bin/xcompmgr -n & exec /usr/bin/xbindkeys
+exec /usr/bin/i3
 

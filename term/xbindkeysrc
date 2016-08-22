@@ -13,3 +13,23 @@
     m:0x0 + c:121
     XF86AudioMute
 
+
+
+## I3S keyboard
+# Windows-right
+"(xdotool key XF86AudioPrev)"
+    m:0x50 + c:113
+    Control+Mod2+Mod4 + Left
+    XF86AudioNext
+
+# Windows-left
+"(xdotool key XF86AudioNext)"
+    m:0x50 + c:114
+    Control+Mod2+Mod4 + Right
+    XF86AudioPrev
+
+# Windows-
+"(xdotool key XF86AudioPlay)"
+    m:0x54 + c:37
+    Control+Mod2+Mod4 + Control_L
+    

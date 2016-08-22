@@ -1,0 +1,7 @@
+"hg7290
+
+loadplugins '\.(js|penta)$'
+group user
+set cdpath=''
+
+" vim: set ft=pentadactyl:

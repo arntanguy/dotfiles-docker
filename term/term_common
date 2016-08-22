@@ -4,7 +4,7 @@
 # GUI
 alias x="startx"
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/lib/roboptim-core"
 
 # C++
 alias m="make -j12"
@@ -15,7 +15,12 @@ alias ccm="cc && mm"
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias cclang="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
 alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
+
+# FIX FOR MATLAB floating menus (without it, menus appear always on main screen)
+_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
 alias matlab="wmname LG3D; matlab"
+alias matlabcli="~/.config/nvim/plugged/vim-matlab/scripts/vim-matlab-server.py"
+
 function glog
 {
   GLOG_logtostderr=1 $*
@@ -85,3 +90,16 @@ export mc_env_description_PATH="~/catkin_ws/src/mc_ros/mc_env_description"
 export hrp2_drc_description_PATH="~/src/hrp2_drc/hrp2_drc_description"
 export hrp4_description_PATH="~/catkin_ws/src/hrp4/hrp4_description"
 
+
+function perf
+{
+  nvidia-settings -a '[gpu:0]/GpuPowerMizerMode=1'
+  # sudo cpufreq-set -c 0 -g performance
+  # sudo cpufreq-set -c 1 -g performance
+  # sudo cpufreq-set -c 2 -g performance
+  # sudo cpufreq-set -c 3 -g performance
+  # sudo cpufreq-set -c 4 -g performance
+  # sudo cpufreq-set -c 5 -g performance
+  # sudo cpufreq-set -c 6 -g performance
+  # sudo cpufreq-set -c 7 -g performance
+}

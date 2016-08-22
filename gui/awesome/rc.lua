@@ -385,3 +385,16 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- {{{ Startup commands
+do
+  local cmds =
+  {
+    "conky -c ~/.config/awesome/conkyrc"
+  }
+
+  for _,i in pairs(cmds) do
+    os.execute(i)
+  end
+end
+-- }}}

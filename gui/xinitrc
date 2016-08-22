@@ -27,5 +27,7 @@ xrandr --auto
 ## For I3
 # /usr/lib/policykit-1/polkitd --no-debug
 # exec /usr/bin/xcompmgr -n & exec /usr/bin/xbindkeys
+# xrandr --setprovideroutputsource NVIDIA-0 Intel
+#xrandr --auto
 exec /usr/bin/i3
 

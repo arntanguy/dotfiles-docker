@@ -16,6 +16,7 @@
     ~/.term_common: term/term_common
     ~/.Xdefaults: term/Xdefaults
     ~/.xbindkeysrc: term/xbindkeysrc
+    ~/.weechat/weechat.conf: term/weechat/weechat.conf
     # ~/.zshrc: term/zshrc
     # ~/.oh-my-zsh: term/oh-my-zsh
     ~/.zprezto: term/zsh/prezto
@@ -33,6 +34,7 @@
     ~/.config/awesome: gui/awesome
     ~/.xmobarrc: gui/xmobarrc
     ~/.xinitrc: gui/xinitrc
+    ~/.config/compton.conf: gui/compton.conf
     ~/.config/redshift.conf: gui/redshift.conf
     # Editor
     ~/.config/nvim: editor/vim

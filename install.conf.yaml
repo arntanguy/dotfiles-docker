@@ -39,7 +39,8 @@
     # Editor
     ~/.config/nvim: editor/vim
     ~/.config/nvim/autoload/plug.vim: editor/vim/vim-plug/plug.vim
-
+    #misc
+    ~/.fonts: misc/fonts
 #- shell:
 #  # Install vim plugins
 #  - command: nvim -Nu ~/.config/nvim/vimrc.plugins +PlugUpdate +qall &> /dev/null

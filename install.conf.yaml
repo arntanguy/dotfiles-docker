@@ -15,6 +15,7 @@
     ~/.bashrc: term/bash/bashrc
     ~/.term_common: term/term_common
     ~/.Xdefaults: term/Xdefaults
+    ~/.Xresources: term/Xresources
     ~/.xbindkeysrc: term/xbindkeysrc
     ~/.weechat/weechat.conf: term/weechat/weechat.conf
     # ~/.zshrc: term/zshrc

@@ -4,7 +4,26 @@
 # GUI
 alias x="startx"
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/lib/roboptim-core"
+#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/lib:/usr/local/lib/roboptim-core:/usr/lib/nvidia-384"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/lib/roboptim-core:/usr/local/lib:/usr/local/lib/x86_64-linux-gnu:/usr/local/cuda/lib64"
+export PATH="$PATH:/opt/Adobe/Reader9/bin:/home/arnaud/src/mc_rtc/utils/mc_log_gui:/usr/local/cuda/bin"
+export PYTHONPATH=""
+export PYTHONPATH="$PYTHONPATH:/home/arnaud/src/ext/nao/pynaoqi-2.7:/home/arnaud/src/python/eigency:/home/arnaud/src/python/PySophus"
+export PYTHONPATH="$PYTHONPATH:/home/arnaud/src/ext/nao/pynaoqi-2.7"
+# Developement tools
+export PYTHONPATH="$PYTHONPATH:/home/arnaud/src/mc_vision_controllers/tools"
+#export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/dist-packages"
+
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/home/arnaud/src/ext/nao/pynaoqi-2.7"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/x86_64-linux-gnu/pkgconfig"
+
+export LC_NUMERIC="en_US.UTF-8"
+export MC_RTC_RVIZ_PANEL_FORCE_QT5=1
+export REGISTRATION_PANEL_FORCE_QT5=1
+
+export GOPATH="/home/arnaud/src/ext/go"
+export PATH="$PATH:$GOPATH/bin"
+
 
 # C++
 alias m="make -j12"
@@ -12,9 +31,20 @@ alias mm="make clean && m"
 alias cmake-clean="make clean ; rm -rf CMakeCache.txt CMakeFiles"
 alias cc="cmake-clean && cmake .."
 alias ccm="cc && mm"
+alias cmaked="cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+alias cmaker="cmake -DCMAKE_BUILD_TYPE=Release"
+alias smi="sudo make install"
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias cclang="export CC=/usr/bin/clang; export CXX=/usr/bin/clang++"
 alias cgcc="export CC=/usr/bin/gcc; export CXX=/usr/bin/g++"
+#catkin_make for youcompleteme
+alias cm="cd ~/catkin_ws && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_EXPORT_COMPILE_COMMANDS=1 && rm -f ~/catkin_ws/compile_commands.json && ln -s ~/catkin_ws/build/compile_commands.json ~/catkin_ws"
+alias runci="gitlab-runner exec docker --docker-image local-ci-gcc --docker-pull-policy never build_gcc"
+
+
+alias kill_howard="sudo kill -TSTP"
+alias revive_howard="sudo kill -CONT"
+
 
 # FIX FOR MATLAB floating menus (without it, menus appear always on main screen)
 _JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
@@ -38,9 +68,15 @@ function ros_real
   alias rosbagp="rosbag play"
 }
 
+function hrp4_vicon_network
+{
+  sudo ifconfig eth0 10.4.5.42 netmask 255.255.255.0
+  sudo ifconfig eth0:1 192.168.10.42 netmask 255.255.254.0
+}
+
 unset ROS_HOSTNAME
 export IP=$(ifconfig eth0 | grep "inet addr" | sed 's/.*inet addr:\(.*\)  Bcast.*/\1/g')
-export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud/src/hrp2_drc"
+export NAO_DESCRIPTION_PATH="/home/arnaud/catkin_ws/src/nao_robot"
 
 # MASTER
 # export ROS_IP=$IP
@@ -51,9 +87,16 @@ export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud/src/hrp2_drc"
 # export ROS_MASTER_URI="http://150.29.145.208:11311"
 
 # LOCALHOST
-export ROS_IP="127.0.0.1"
-export ROS_MASTER_URI="http://127.0.0.1:11311"
-#
+
+# Stephane is the master
+# export ROS_MASTER_URI="http://10.4.5.111:11311"
+
+# ADRIEN
+# IP 10.4.5.127
+
+## I'm the master
+# export ROS_IP="$IP"
+# export ROS_MASTER_URI="http://$IP:11311"
 
 # LIRMM
 #export ROS_IP=192.168.100.92
@@ -64,15 +107,16 @@ export ROS_MASTER_URI="http://127.0.0.1:11311"
 # export ROS_IP=10.4.5.1
 # export ROS_MASTER_URI="http://$ROS_IP:11311"
 
+alias ros_local="export ROS_IP=127.0.0.1 && export ROS_MASTER_URI=\"http://localhost:11311\""
+alias ros_stephane="PROMPT' && export ROS_MASTER_URI=http://stephane:11311"
+alias ros_hrp="export ROS_MASTER_URI=\"http://10.16.3.13:11311\""
+alias ros_server="export ROS_IP=$IP; export ROS_MASTER_URI=\"http://$IP:11311\""
 
-# HRP2001V
-# export ROS_IP=$IP
-# export ROS_MASTER_URI="http://hrp2001v:11311"
-
-alias ros_local="export ROS_MASTER_URI=\"http://127.0.0.1:11311\" && export ROS_IP=\"127.0.0.1\""
-alias ros_hrp="export PROMPT='(hrp) $PROMPT' && export ROS_MASTER_URI=\"http://10.16.3.13:11311\""
-alias ros_server="export PROMPT='(local) $PROMPT' && export ROS_MASTER_URI=\"http://$ROS_IP:11311\""
-alias ros_herve="export ROS_MASTER_URI=\"http://150.29.145.226:11311\""
+# Default ROS config
+# ROS_IP is always my ethernet ip
+export ROS_IP="$IP"
+ros_local
+alias s="source ~/.zshrc"
 
 
 # Keyboard layout
@@ -83,12 +127,11 @@ alias fr="setxkbmap fr && /usr/bin/xbindkeys"
 alias musb="sudo mount /dev/sdb1 /mnt/USB"
 
 export GIT_SSL_NO_VERIFY=1
-export HRP2_DRC_DESCRIPTION_PATH="~/src/hrp2_drc/hrp2_drc_description"
-export HRP4_DESCRIPTION_PATH="~/catkin_ws/src/hrp4/hrp4_description"
-
-export mc_env_description_PATH="~/catkin_ws/src/mc_ros/mc_env_description"
-export hrp2_drc_description_PATH="~/src/hrp2_drc/hrp2_drc_description"
-export hrp4_description_PATH="~/catkin_ws/src/hrp4/hrp4_description"
+# export HRP2_DRC_DESCRIPTION_PATH="~/src/hrp2_drc/hrp2_drc_description"
+# export HRP4_DESCRIPTION_PATH="~/catkin_ws/src/hrp4/hrp4_description"
+# export MC_ENV_DESCRIPTION_PATH="~/catkin_ws/src/mc_ros/mc_env_description"
+# export hrp2_drc_description_PATH="~/src/hrp2_drc/hrp2_drc_description"
+# export hrp4_description_PATH="~/catkin_ws/src/hrp4/hrp4_description"
 
 
 function perf

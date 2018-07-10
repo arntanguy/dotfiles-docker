@@ -29,5 +29,6 @@ xrandr --auto
 # exec /usr/bin/xcompmgr -n & exec /usr/bin/xbindkeys
 # xrandr --setprovideroutputsource NVIDIA-0 Intel
 #xrandr --auto
+xrdb -merge .Xresources
 exec /usr/bin/i3
 

@@ -8,15 +8,18 @@ fi
 # Customize to your needs...
 export KEYTIMEOUT=0.01
 
+# common configuration
+source ~/.term_common
+
 # User configuration
 # ROS
 source /opt/ros/indigo/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
+source ~/overlay_ws/devel/setup.zsh
 
-# common configuration
-source ~/.term_common
+export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud/src/ext/ORB_SLAM2/Examples/ROS/ORB_SLAM2"
 
-export PATH=$PATH:$HOME/scripts:/usr/local/bin:
+export PATH=$PATH:$HOME/scripts:/usr/local/bin:/usr/local/MATLAB/R2015a/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

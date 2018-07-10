@@ -8,3 +8,5 @@
 	editor = nvim
 [diff]
 	tool = meld
+[rerere]
+	enabled = 1

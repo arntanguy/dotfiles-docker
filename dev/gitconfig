@@ -10,3 +10,5 @@
 	tool = meld
 [rerere]
 	enabled = 1
+[credential]
+	helper = cache

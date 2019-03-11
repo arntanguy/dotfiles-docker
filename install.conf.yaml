@@ -7,7 +7,6 @@
 - link:
     # Dev
     ~/.gitconfig: dev/gitconfig
-    ~/.ycm_extra_conf.py: dev/ycm_extra_conf.py
     ~/.clang-format: dev/clang-format
     # Term
     ~/.tmux.conf: term/tmux.conf
@@ -20,15 +19,8 @@
     ~/.weechat/weechat.conf: term/weechat/weechat.conf
     # ~/.zshrc: term/zshrc
     # ~/.oh-my-zsh: term/oh-my-zsh
-    ~/.zprezto: term/zsh/prezto
-    ~/.zlogin: term/zsh/zlogin
-    ~/.zlogout: term/zsh/zlogout
-    ~/.zpreztorc: term/zsh/zpreztorc
-    ~/.zprofile: term/zsh/zprofile
-    ~/.zshenv: term/zsh/zshenv
     ~/.zshrc: term/zsh/zshrc
     ~/.mydircolors: term/mydircolors
-    ~/.powerline-shell.py: term/powerline-shell/powerline-shell.py
     # GUI
     ~/.xmonad: gui/xmonad
     ~/.i3: gui/i3

@@ -18,6 +18,8 @@ export EDITOR='nvim'
 export LANG=en_US.utf8
 set shell=/bin/bash
 
+export SRC_DIR="/home/arnaud/src/choreonoid"
+
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 
@@ -56,3 +58,5 @@ function _update_ps1() {
   export PS1="$(~/.powerline-shell.py $? 2> /dev/null)"
 }
 export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

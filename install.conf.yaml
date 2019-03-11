@@ -12,11 +12,9 @@
     ~/.tmux.conf: term/tmux.conf
     ~/.tmux: term/tmux/
     ~/.bashrc: term/bash/bashrc
-    ~/.term_common: term/term_common
     ~/.Xdefaults: term/Xdefaults
     ~/.Xresources: term/Xresources
     ~/.xbindkeysrc: term/xbindkeysrc
-    ~/.weechat/weechat.conf: term/weechat/weechat.conf
     # ~/.zshrc: term/zshrc
     # ~/.oh-my-zsh: term/oh-my-zsh
     ~/.zshrc: term/zsh/zshrc

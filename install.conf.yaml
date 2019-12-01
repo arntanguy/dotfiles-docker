@@ -2,7 +2,8 @@
 
 - shell:
   - [git submodule update --init --remote --recursive, Installing submodules]
-  - command: cd term/powerline-shell && ./install.py
+  - command: cd term/powerline-shell && sudo ./setup.py install
+  - command: rm -rf ~/.cache/gnome-control-center/backgrounds 
 
 - link:
     # Dev
@@ -11,19 +12,18 @@
     # Term
     ~/.tmux.conf: term/tmux.conf
     ~/.tmux: term/tmux/
-    ~/.bashrc: term/bash/bashrc
     ~/.Xdefaults: term/Xdefaults
     ~/.Xresources: term/Xresources
     ~/.xbindkeysrc: term/xbindkeysrc
-    # ~/.zshrc: term/zshrc
-    # ~/.oh-my-zsh: term/oh-my-zsh
+    ~/.zprezto: term/prezto
+    ~/.zpreztorc: term/zsh/zpreztorc
     ~/.zshrc: term/zsh/zshrc
     ~/.mydircolors: term/mydircolors
     # GUI
-    ~/.xmonad: gui/xmonad
     ~/.i3: gui/i3
-    ~/.config/awesome: gui/awesome
-    ~/.xmobarrc: gui/xmobarrc
+    ~/.config/regolith: gui/regolith
+    ~/.cache/gnome-control-center/backgrounds: gui/i3/wallpapers
+    ~/Pictures/Wallpapers: gui/i3/wallpapers 
     ~/.xinitrc: gui/xinitrc
     ~/.config/compton.conf: gui/compton.conf
     ~/.config/redshift.conf: gui/redshift.conf

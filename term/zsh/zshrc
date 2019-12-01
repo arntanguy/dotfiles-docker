@@ -5,22 +5,7 @@ else
   echo "Error sourcing zpresto!"
 fi
 
-# Customize to your needs...
-export KEYTIMEOUT=0.01
-
-# common configuration
-source ~/.term_common
-
-# User configuration
-# ROS
-
-export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:/home/arnaud/src/ext/ORB_SLAM2/Examples/ROS/ORB_SLAM2"
-
-export PATH=$PATH:$HOME/scripts:/usr/local/bin:/usr/local/MATLAB/R2015a/bin
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export PATH=$PATH:/usr/local/bin
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -32,31 +17,5 @@ else
   alias vim='nvim'
 fi
 
-if [ "$(lsb_release -r -s)" = "16.04" ]; then
-  echo "Using Ubuntu 16.04"
-  echo "Activating python virtualenv ~/src16/python_venv/bin/activate"
-  source ~/src16/python_venv/bin/activate
-  echo "Setting up ros kinetic environment"
-  source /opt/ros/kinetic/setup.zsh
-fi
-
-if [ "$(lsb_release -r -s)" = "14.04" ]; then
-  echo "Using Ubuntu 14.04"
-  echo "Setting up ros indigo environment"
-  source /opt/ros/indigo/setup.zsh
-fi
-# source ~/overlay_ws/devel/setup.zsh
-source ~/catkin_ws_registration/devel/setup.zsh
-source ~/catkin_plugins/devel/setup.zsh
-
-alias cws="source ~/src/catkin_ws/devel/setup.zsh"
-
-# bindkey "^R" history-incremental-search-backward
-# bindkey -M viins \C-R history-incremental-search-backward
-# bindkey -M vicmd \C-R history-incremental-search-backward
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-export OPENCV_LIBS='/home/arnaud/src/comanoid/install_opencv/lib/libopencv_aruco.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_bgsegm.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_bioinspired.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_calib3d.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_ccalib.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_core.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_datasets.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_dnn.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_dpm.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_face.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_features2d.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_flann.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_freetype.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_fuzzy.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_highgui.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_imgcodecs.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_img_hash.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_imgproc.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_line_descriptor.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_ml.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_objdetect.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_optflow.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_phase_unwrapping.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_photo.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_plot.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_reg.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_rgbd.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_saliency.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_sfm.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_shape.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_stereo.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_stitching.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_structured_light.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_superres.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_surface_matching.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_text.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_tracking.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_videoio.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_video.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_videostab.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_viz.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_xfeatures2d.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_ximgproc.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_xobjdetect.so.3.3.1 /home/arnaud/src/comanoid/install_opencv/lib/libopencv_xphoto.so.3.3.1'
-alias visp_tracking='LD_PRELOAD="$OPENCV_LIBS" roslaunch comanoid_bracket_grasping launch_bracket_feeder_hrp4_gripper_trackers.launch'
+source /opt/ros/melodic/setup.zsh
+source ~/src/catkin_ws

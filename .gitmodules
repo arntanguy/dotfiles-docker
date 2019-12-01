@@ -11,7 +11,7 @@
 	path = gui/i3
 	url = git@github.com:arntanguy/i3config.git
 [submodule "term/prezto"]
-	path = term/zsh/prezto
+	path = term/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "term/tmux/plugins/tpm"]
 	path = term/tmux/plugins/tpm

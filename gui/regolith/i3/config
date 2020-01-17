@@ -14,7 +14,8 @@ set $i3xrocks_config /etc/regolith/i3xrocks/config
 set $compton_config /etc/regolith/compton/config
 
 # path to terminal. Override this to specify a custom terminal.
-set $terminal_path /usr/bin/st
+# set $terminal_path /usr/local/bin/st
+set $terminal_path /usr/bin/gnome-terminal
 
 # Color values are defined in ~/.Xresources-regolith
 # These are the labels which define each i3 workspace.
@@ -230,6 +231,24 @@ mode "Resize Mode" {
 }
 bindsym $mod+r mode "Resize Mode"
 
+# Use modes
+mode "Move workspace" {
+#Move current workspace to different output
+bindsym Left move workspace to output left
+bindsym Right move workspace to output left
+bindsym Down move workspace to output down
+bindsym Up move workspace to output up
+bindsym h move workspace to output left
+bindsym l move workspace to output left
+bindsym j move workspace to output down
+bindsym k move workspace to output up
+bindsym Shift+v move workspace to output $VGA
+bindsym Shift+h move workspace to output $HDMI
+bindsym Shift+l move workspace to output $LVDS
+bindsym Escape mode "default"
+}
+bindsym $mod+Shift+w mode "Move workspace"
+
 # Disable titlebar
 new_window pixel 1
 new_float pixel 1
@@ -299,7 +318,9 @@ set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.u
 set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
-set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
+
+set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 16, FontAwesome 16"
+
 
 # Configure the bar
 bar {
@@ -335,3 +356,8 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Refresh wallpaper on screen resolution change
 exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
+
+# screen lock
+bindsym Control+$mod+l exec ~/.i3/lock
+
+## xset -dpms s off

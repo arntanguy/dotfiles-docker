@@ -19,3 +19,22 @@ fi
 
 source /opt/ros/melodic/setup.zsh
 source ~/src/catkin_ws
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /opt/ros/melodic/setup.zsh
+source ~/src/catkin_ws/devel/setup.zsh
+
+alias cmake_ninjacc="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  -GNinja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache"
+alias ccmake_ninjacc="ccmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  -GNinja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache"
+alias cmake="cmake_ninjacc -DCMAKE_BUILD_TYPE=Release"
+alias ccmake="ccmake_ninjacc"
+alias cmakerd="cmake_ninjacc -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+alias cmaked="cmake_ninjacc -DCMAKE_BUILD_TYPE=Debug"
+alias m='ninja'
+alias n='ninja'
+alias smi="sudo ninja install"
+alias mi="ninja install"
+alias sni="sudo ninja install"
+alias ni="ninja install"
+

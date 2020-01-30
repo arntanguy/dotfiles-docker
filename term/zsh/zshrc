@@ -24,6 +24,16 @@ source ~/src/catkin_ws
 
 source /opt/ros/melodic/setup.zsh
 source ~/src/catkin_ws/devel/setup.zsh
+source ~/drcutil/setup.bash
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+
+# for pinocchio 
+# https://stack-of-tasks.github.io/pinocchio/download.html
+export PATH=/opt/openrobots/bin:$PATH
+export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH
+export CMAKE_PREFIX_PATH="/home/arnaud/openrtp/share/choreonoid/cmake:${CMAKE_PREFIX_PATH}"
 
 alias cmake_ninjacc="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  -GNinja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache"
 alias ccmake_ninjacc="ccmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  -GNinja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache"
@@ -37,4 +47,5 @@ alias smi="sudo ninja install"
 alias mi="ninja install"
 alias sni="sudo ninja install"
 alias ni="ninja install"
+
 

@@ -4,6 +4,7 @@
   - [git submodule update --init --remote --recursive, Installing submodules]
   - command: cd term/powerline-shell && sudo ./setup.py install
   - command: rm -rf ~/.cache/gnome-control-center/backgrounds 
+  - command: sudo snap install ccls --classic
 
 - link:
     # Dev

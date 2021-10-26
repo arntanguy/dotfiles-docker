@@ -17,14 +17,11 @@ else
   alias vim='nvim'
 fi
 
-source /opt/ros/melodic/setup.zsh
-source ~/src/catkin_ws
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /opt/ros/melodic/setup.zsh
+source /opt/ros/noetic/setup.zsh
 source ~/src/catkin_ws/devel/setup.zsh
-source ~/drcutil/setup.bash
+source ~/src/catkin_ws_ana/devel/setup.zsh
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 # for pinocchio 
@@ -47,5 +44,3 @@ alias smi="sudo ninja install"
 alias mi="ninja install"
 alias sni="sudo ninja install"
 alias ni="ninja install"
-
-

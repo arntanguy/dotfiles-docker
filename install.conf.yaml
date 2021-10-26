@@ -5,6 +5,10 @@
   - command: cd term/powerline-shell && sudo ./setup.py install
   - command: rm -rf ~/.cache/gnome-control-center/backgrounds 
   - command: sudo snap install ccls --classic
+  - command: sudo apt install xclip # for neovim clipboard
+  - command: sudo add-apt-repository ppa:neovim-ppa/unstable
+  - command: sudo apt update
+  - command: sudo apt install neovim python3-neovim
 
 - link:
     # Dev

@@ -3,12 +3,13 @@
 - shell:
   - [git submodule update --init --remote --recursive, Installing submodules]
   - command: cd term/powerline-shell && sudo ./setup.py install
-  - command: rm -rf ~/.cache/gnome-control-center/backgrounds 
-  - command: sudo snap install ccls --classic
+  - command: rm -rf ~/.cache/gnome-control-center/backgrounds
   - command: sudo apt install xclip # for neovim clipboard
+  - command: sudo apt install zsh
+  - command: sudo chsh -s /usr/bin/zsh
   - command: sudo add-apt-repository ppa:neovim-ppa/unstable
   - command: sudo apt update
-  - command: sudo apt install neovim python3-neovim
+  - command: sudo apt install neovim python3-neovim ccls
 
 - link:
     # Dev
@@ -28,7 +29,7 @@
     ~/.i3: gui/i3
     ~/.config/regolith: gui/regolith
     ~/.cache/gnome-control-center/backgrounds: gui/i3/wallpapers
-    ~/Pictures/Wallpapers: gui/i3/wallpapers 
+    ~/Pictures/Wallpapers: gui/i3/wallpapers
     ~/.xinitrc: gui/xinitrc
     ~/.config/compton.conf: gui/compton.conf
     ~/.config/redshift.conf: gui/redshift.conf

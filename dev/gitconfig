@@ -1,7 +1,7 @@
 [user]
-	email = arnaud.tanguy@lirmm.fr
-	name = Arnaud TANGUY
-	singinkey = 2781106B
+	email = arn.tanguy@gmail.com
+	name = Arnaud Tanguy
+	signingKey = 8A247EA2010793F0CCDF4A81670FEE9ECBA397FB
 [push]
 	default = simple
 [core]
@@ -14,3 +14,9 @@
 	helper = cache
 [cola]
 	spellcheck = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgSign = true
+[init]
+	defaultBranch = main

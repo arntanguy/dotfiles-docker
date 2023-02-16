@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import sys
+import i3
+
+import utils
+
+
+utils.sort_workspaces()
+names = utils.get_workspace_names()
+if len(sys.argv) == 1:
+    choice = utils.run_dmenu(names, "-p", "goto: ")
+    if choice not in names:
+        choice = utils.insert_new_workspace(names, choice)
+else:
+    index = int(sys.argv[1])
+    ind = (index - 1 + len(names))% (len(names))
+    if index > len(names):
+        choice = str(index)+": "
+    else:
+        choice = names[ind]
+print(choice)
+i3.command("workspace", choice)
+utils.sort_workspaces()

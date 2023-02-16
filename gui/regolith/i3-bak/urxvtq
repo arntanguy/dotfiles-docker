@@ -1,0 +1,7 @@
+#!/bin/bash
+
+wid=$(xdotool search --classname scratchpad_urxvt_top)
+if [ -z "$wid" ]; then
+    #your prefered urxvt output here.
+    urxvt -pe default,matcher -name scratchpad_urxvt_top -geometry 180x28
+fi

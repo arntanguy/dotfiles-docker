@@ -10,9 +10,9 @@
 [submodule "term/prezto"]
 	path = term/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
-[submodule "term/tmux/plugins/tpm"]
-	path = term/tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
 [submodule "gui/regolith/i3"]
 	path = gui/regolith/i3
 	url = git@github.com:arntanguy/i3config.git
+[submodule "term/tmux"]
+	path = term/tmux
+	url = https://github.com/gpakosz/.tmux.git

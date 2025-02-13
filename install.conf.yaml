@@ -17,7 +17,7 @@
     # ~/.xbindkeysrc: term/xbindkeysrc
     # ~/.zprezto: term/prezto
     # ~/.zpreztorc: term/zsh/zpreztorc
-    # ~/.zshrc: term/zsh/zshrc
+    ~/.zshrc: term/ohmyzsh/zshrc
     # ~/.mydircolors: term/mydircolors
     # GUI
     ~/.config/regolith: gui/regolith

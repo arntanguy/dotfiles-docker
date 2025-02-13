@@ -1,6 +1,6 @@
 - shell:
   # - [git submodule update --init --remote --recursive, Installing submodules]
-  - command: sudo apt install -y ripgrep fd-find 
+  - command: sudo apt install -y ripgrep fd-find redshift tmux build-essential cmake zsh
   - command: mkdir -p ~/.config/tmux
 
 
@@ -20,15 +20,14 @@
     # ~/.zshrc: term/zsh/zshrc
     # ~/.mydircolors: term/mydircolors
     # GUI
-    # ~/.config/regolith: gui/regolith
+    ~/.config/regolith: gui/regolith
     # ~/.cache/gnome-control-center/backgrounds: gui/i3/wallpapers
-    # ~/Pictures/Wallpapers: gui/i3/wallpapers
+    ~/Pictures/Wallpapers: gui/regolith/i3/wallpapers
     # ~/.xinitrc: gui/xinitrc
-    # ~/.config/compton.conf: gui/compton.conf
-    # ~/.config/redshift.conf: gui/redshift.conf
+    ~/.config/compton.conf: gui/compton.conf
+    ~/.config/redshift.conf: gui/redshift.conf
     # Editor
-    # ~/.config/nvim: editor/vim
-    # ~/.config/nvim/autoload/plug.vim: editor/vim/vim-plug/plug.vim
+    ~/.config/nvim: editor/nvim
     #misc
     # ~/.fonts: misc/fonts
 # - clean: ['~', '~/.vim']

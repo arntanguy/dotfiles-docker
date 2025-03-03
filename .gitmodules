@@ -4,12 +4,6 @@
 [submodule "editor/vim"]
 	path = editor/vim
 	url = git@github.com:arntanguy/.vim.git
-[submodule "term/powerline-shell"]
-	path = term/powerline-shell
-	url = git@github.com:milkbikis/powerline-shell.git
-[submodule "term/prezto"]
-	path = term/prezto
-	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "gui/regolith/i3"]
 	path = gui/regolith/i3
 	url = git@github.com:arntanguy/i3config.git

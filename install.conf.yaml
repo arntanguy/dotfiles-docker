@@ -1,8 +1,11 @@
 - shell:
   # - [git submodule update --init --remote --recursive, Installing submodules]
-  - command: sudo apt install -y ripgrep fd-find redshift tmux build-essential cmake zsh
+  - command: sudo apt install -y --no-install-recommends ripgrep fd-find redshift tmux build-essential cmake zsh git
+  - command: sudo apt install -y --no-install-recommends luarocks python3-venv
+  - command: sudo apt install -y --no-install-recommends i3xrocks-battery i3xrocks-bluetooth i3xrocks-focused-window-name i3xrocks-key-indicator i3xrocks-keyboard-layout i3xrocks-microphone i3xrocks-wifi
   - command: mkdir -p ~/.config/tmux
-
+  - command: if [ ! -d ~/.oh-my-zsh ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; fi
+  - command: cd /tmp && mkdir fonts && cd fonts && curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz && tar xf JetBrainsMono.tar.xz  && mkdir -p ~/.local/share/fonts && cp *.ttf ~/.local/share/fonts
 
 - link:
     # Dev
@@ -11,67 +14,9 @@
     # Term
     ~/.config/tmux/tmux.conf: term/tmux/.tmux.conf
     ~/.config/tmux/tmux.conf.local: term/tmux.conf.local
-    # ~/.scripts: scripts/
-    # ~/.Xdefaults: term/Xdefaults
-    # ~/.Xresources: term/Xresources
-    # ~/.xbindkeysrc: term/xbindkeysrc
-    # ~/.zprezto: term/prezto
-    # ~/.zpreztorc: term/zsh/zpreztorc
-    ~/.zshrc: term/ohmyzsh/zshrc
-    # ~/.mydircolors: term/mydircolors
     # GUI
-    ~/.config/regolith: gui/regolith
-    # ~/.cache/gnome-control-center/backgrounds: gui/i3/wallpapers
     ~/Pictures/Wallpapers: gui/regolith/i3/wallpapers
-    # ~/.xinitrc: gui/xinitrc
     ~/.config/compton.conf: gui/compton.conf
-    ~/.config/redshift.conf: gui/redshift.conf
-    # Editor
-    ~/.config/nvim: editor/nvim
-    #misc
-    # ~/.fonts: misc/fonts
-# - clean: ['~', '~/.vim']
-#
-# - shell:
-#   - [git submodule update --init --remote --recursive, Installing submodules]
-#   - command: cd term/powerline-shell && sudo ./setup.py install
-#   - command: rm -rf ~/.cache/gnome-control-center/backgrounds
-#   - command: sudo apt install xclip # for neovim clipboard
-#   - command: sudo apt install zsh
-#   - command: sudo chsh -s /usr/bin/zsh
-#   - command: sudo add-apt-repository ppa:neovim-ppa/stable
-#   - command: sudo apt update
-#   - command: sudo apt install -y neovim python3-neovim ccls fd-find
-#   - command:  npm i -g pyright
-#   - command: sudo snap install node --classic
-#   - command: sudo add-apt-repository ppa:regolith-linux/release
-#   - command: sudo apt install regolith-desktop i3xrocks-net-traffic i3xrocks-cpu-usage i3xrocks-time feh
-#
-#
-# - link:
-#     # Dev
-#     ~/.gitconfig: dev/gitconfig
-#     ~/.clang-format: dev/clang-format
-#     # Term
-#     ~/.tmux.conf: term/tmux.conf
-#     ~/.tmux: term/tmux/
-#     ~/.scripts: scripts/
-#     ~/.Xdefaults: term/Xdefaults
-#     ~/.Xresources: term/Xresources
-#     ~/.xbindkeysrc: term/xbindkeysrc
-#     ~/.zprezto: term/prezto
-#     ~/.zpreztorc: term/zsh/zpreztorc
-#     ~/.zshrc: term/zsh/zshrc
-#     ~/.mydircolors: term/mydircolors
-#     # GUI
-#     ~/.config/regolith: gui/regolith
-#     ~/.cache/gnome-control-center/backgrounds: gui/i3/wallpapers
-#     ~/Pictures/Wallpapers: gui/i3/wallpapers
-#     ~/.xinitrc: gui/xinitrc
-#     ~/.config/compton.conf: gui/compton.conf
-#     ~/.config/redshift.conf: gui/redshift.conf
-#     # Editor
-#     ~/.config/nvim: editor/vim
-#     ~/.config/nvim/autoload/plug.vim: editor/vim/vim-plug/plug.vim
-#     #misc
-#     ~/.fonts: misc/fonts
+    ~/.config/redshift.conf: gui/redshift.conf 
+    ~/.config/nvim: editor/nvim 
+    ~/.config/regolith3: regolith3 

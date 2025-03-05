@@ -20,3 +20,6 @@
     ~/.config/redshift.conf: gui/redshift.conf 
     ~/.config/nvim: editor/nvim 
     ~/.config/regolith3: regolith3 
+    ~/.gnupg/gpg-agent.conf: dev/gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: dev/gnupg/gpg.conf
+    ~/.devpod/config.yaml: dev/devpod/config.yaml

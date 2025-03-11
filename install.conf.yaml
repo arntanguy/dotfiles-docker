@@ -1,11 +1,12 @@
-- shell:
-  # - [git submodule update --init --remote --recursive, Installing submodules]
-  - command: sudo apt install -y --no-install-recommends ripgrep fd-find redshift tmux build-essential cmake zsh git
-  - command: sudo apt install -y --no-install-recommends luarocks python3-venv
-  - command: sudo apt install -y --no-install-recommends i3xrocks-battery i3xrocks-bluetooth i3xrocks-focused-window-name i3xrocks-key-indicator i3xrocks-keyboard-layout i3xrocks-microphone i3xrocks-wifi
-  - command: mkdir -p ~/.config/tmux
-  - command: if [ ! -d ~/.oh-my-zsh ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; fi
-  - command: cd /tmp && mkdir fonts && cd fonts && curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz && tar xf JetBrainsMono.tar.xz  && mkdir -p ~/.local/share/fonts && cp *.ttf ~/.local/share/fonts
+# - shell:
+#   # - [git submodule update --init --remote --recursive, Installing submodules]
+#   - command: sudo apt install -y --no-install-recommends ripgrep fd-find redshift tmux build-essential cmake zsh git
+#   - command: sudo apt install -y --no-install-recommends luarocks python3-venv
+#   - command: sudo apt install -y --no-install-recommends i3xrocks-battery i3xrocks-bluetooth i3xrocks-focused-window-name i3xrocks-key-indicator i3xrocks-keyboard-layout i3xrocks-microphone i3xrocks-wifi
+#   - command sudo apt install -y --no-install-recommends gammastep geoclue-2.0 
+#   - command: mkdir -p ~/.config/tmux
+#   - command: if [ ! -d ~/.oh-my-zsh ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; fi
+#   - command: cd /tmp && mkdir fonts && cd fonts && curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz && tar xf JetBrainsMono.tar.xz  && mkdir -p ~/.local/share/fonts && cp *.ttf ~/.local/share/fonts
 
 - link:
     # Dev
@@ -23,3 +24,4 @@
     ~/.gnupg/gpg-agent.conf: dev/gnupg/gpg-agent.conf
     ~/.gnupg/gpg.conf: dev/gnupg/gpg.conf
     ~/.devpod/config.yaml: dev/devpod/config.yaml
+    ~/.config/gammastep: gammastep

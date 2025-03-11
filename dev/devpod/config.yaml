@@ -1,0 +1,18 @@
+contexts:
+  default:
+    defaultProvider: docker
+    options:
+      # GPG_AGENT_FORWARDING:
+      #   userProvided: true
+      #   value: "true"
+    providers:
+      docker:
+        creationTimestamp: "2025-02-12T16:56:23Z"
+        initialized: true
+        options:
+          DOCKER_BUILDER: {}
+          DOCKER_HOST: {}
+          DOCKER_PATH:
+            value: docker
+          INACTIVITY_TIMEOUT: {}
+defaultContext: default

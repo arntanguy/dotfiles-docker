@@ -25,3 +25,4 @@
     ~/.gnupg/gpg.conf: dev/gnupg/gpg.conf
     ~/.devpod/config.yaml: dev/devpod/config.yaml
     ~/.config/gammastep: gammastep
+    ~/.zshrc: term/zshrc

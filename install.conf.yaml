@@ -1,5 +1,5 @@
-# - shell:
-#   # - [git submodule update --init --remote --recursive, Installing submodules]
+- shell:
+    - [git submodule update --init --remote --recursive, Installing submodules]
 #   - command: sudo apt install -y --no-install-recommends ripgrep fd-find redshift tmux build-essential cmake zsh git
 #   - command: sudo apt install -y --no-install-recommends luarocks python3-venv
 #   - command: sudo apt install -y --no-install-recommends i3xrocks-battery i3xrocks-bluetooth i3xrocks-focused-window-name i3xrocks-key-indicator i3xrocks-keyboard-layout i3xrocks-microphone i3xrocks-wifi
@@ -16,14 +16,5 @@
     ~/.config/tmux/tmux.conf: term/tmux/.tmux.conf
     ~/.config/tmux/tmux.conf.local: term/tmux.conf.local
     # GUI
-    ~/Pictures/Wallpapers: gui/regolith/i3/wallpapers
-    ~/.config/compton.conf: gui/compton.conf
-    ~/.config/redshift.conf: gui/redshift.conf 
     ~/.config/nvim: editor/nvim 
-    ~/.config/regolith3: regolith3 
-    ~/.gnupg/gpg-agent.conf: dev/gnupg/gpg-agent.conf
-    ~/.gnupg/gpg.conf: dev/gnupg/gpg.conf
-    ~/.devpod/config.yaml: dev/devpod/config.yaml
-    ~/.config/gammastep: gammastep
     ~/.zshrc: term/zshrc
-    ~/.config/apport: apport

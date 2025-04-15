@@ -26,3 +26,4 @@
     ~/.devpod/config.yaml: dev/devpod/config.yaml
     ~/.config/gammastep: gammastep
     ~/.zshrc: term/zshrc
+    ~/.config/apport: apport

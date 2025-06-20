@@ -1,0 +1,3 @@
+[server]
+endpoint = "http://localhost:8080"
+token = "auth_8372ee3a04144ee48778fb03540c6832"

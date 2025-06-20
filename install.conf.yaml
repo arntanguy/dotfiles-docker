@@ -15,6 +15,7 @@
     # Term
     ~/.config/tmux/tmux.conf: term/tmux/.tmux.conf
     ~/.config/tmux/tmux.conf.local: term/tmux.conf.local
+    ~/.tabby-client: tabby-client
     # GUI
     ~/.config/nvim: editor/nvim 
     ~/.zshrc: term/zshrc
